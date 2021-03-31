@@ -1,0 +1,22 @@
+@use "../duomo" as *;
+
+@mixin theme {
+	transition: var(--theme-transition);
+	@content;
+}
+
+:root {
+	--theme-duration: 500ms;
+	--theme-timing-function: #{$ease-out};
+	--theme-transition: #{var(--theme-duration) background-color var(--theme-timing-function), var(--theme-duration) border-color var(--theme-timing-function),
+		var(--theme-duration) box-shadow var(--theme-timing-function), var(--theme-duration) color var(--theme-timing-function),
+		var(--theme-duration) fill var(--theme-timing-function), var(--theme-duration) opacity var(--theme-timing-function),
+		var(--theme-duration) stroke var(--theme-timing-function)};
+}
+
+hr { width: 100%; }
+
+.w-stagger-1 { width: 50%;   }
+.w-stagger-2 { width: 75%;   }
+.w-stagger-3 { width: 87.5%; }
+.w-stagger-4 { width: 62.5%; }

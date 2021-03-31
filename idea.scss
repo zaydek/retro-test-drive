@@ -1,0 +1,19 @@
+$theme: (
+	app-bg:               ($cool-gray-800, $cool-gray-800),
+	app-shadow:           ((0 0 0 1px $cool-gray-700, $shadow-xs, $shadow-md), (0 0 0 1px $cool-gray-700, $shadow-xs, $shadow-md)),
+	searchbar-bg:         ($cool-gray-800, $cool-gray-800),
+	sidebar-bg:           ($cool-gray-800, $cool-gray-800),
+	card-shadow:          (0 0 0 1px $cool-gray-600, 0 0 0 1px $cool-gray-600),
+	svg-color:            ($cool-gray-200, $cool-gray-200),
+	fadedsvg-color:       ($cool-gray-200, $cool-gray-200),
+	text-color:           ($cool-gray-200, $cool-gray-200),
+	grayui-shadow:        (0 0 0 1px $cool-gray-600, 0 0 0 1px $cool-gray-600),
+	raisedui-shadow:      (0 0 0 1px $cool-gray-600, 0 0 0 1px $cool-gray-600),
+	raiseduiseparator-bg: ($cool-gray-600, $cool-gray-600),
+);
+
+@include themes((
+	theme: $theme,
+	dur: 700ms,
+	ease: $ease-out,
+));

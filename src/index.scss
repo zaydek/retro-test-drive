@@ -1,0 +1,68 @@
+@use "sass:list";
+
+@use "../duomo" as *;
+@use "plugins" as *;
+
+$dark: ":root:not([data-theme-effect])";
+
+$app-bg:            ($cool-gray-50, $cool-gray-900);
+$hr-border-color:   ($cool-gray-300, $cool-gray-800);
+$search-bar-bg:     ($white, $cool-gray-900);
+$search-bar-btn-bg: ($cool-gray-50, $cool-gray-800);
+$drop-down-bg:      ($white, $cool-gray-900);
+$drop-down-shadow:  (inset 0 0 $transparent, $shadow-px, $shadow-md, $shadow-xl),
+                    (inset 0 0 0 1px list.nth($hr-border-color, 2), $shadow-px, $shadow-md, $shadow-xl);
+$shade-1-bg:        ($cool-gray-400, $cool-gray-600);
+$shade-2-bg:        ($cool-gray-300, $cool-gray-700);
+
+:root, hr { @include theme; }
+
+*,
+::before,
+::after {
+	@include theme {
+		@include border-color($hr-border-color...);
+	}
+}
+
+:root {
+	@include theme {
+		@include background-color($app-bg...);
+	}
+}
+
+// Etc.
+.shade-1 {
+	@include theme {
+		@include background-color($shade-1-bg...);
+	}
+}
+.shade-2 {
+	@include theme {
+		@include background-color($shade-2-bg...);
+	}
+}
+
+// Search bar
+.search-bar {
+	@include theme {
+		@include background-color($search-bar-bg...);
+		&-btn {
+			@include background-color($cool-gray-50, $cool-gray-800);
+			#{$dark} & {
+				transition-duration: 10ms;
+				&:hover {
+					background-color: white;
+				}
+			}
+		}
+	}
+}
+
+// Drop down
+.drop-down {
+	@include theme {
+		@include background-color($drop-down-bg...);
+		@include box-shadow($drop-down-shadow...);
+	}
+}
