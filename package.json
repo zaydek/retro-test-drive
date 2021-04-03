@@ -1,8 +1,8 @@
 {
 	"scripts": {
-		"duomo": "npx sass duomo.config.scss tmp/duomo.css --no-source-map && npx esbuild tmp/duomo.css --log-level=warning --outdir=out && rm -rf tmp",
-		"duomo-build": "npx sass duomo.config.scss tmp/duomo.css --no-source-map && npx esbuild tmp/duomo.css --entry-names=[dir]/[name]__[hash] --log-level=warning --minify --outdir=out && rm -rf tmp",
-		"dev": "npm run duomo & retro dev",
+		"duomo-dev": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --log-level=warning --outdir=out && rm -rf tmp",
+		"duomo-build": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --entry-names=[dir]/[name]__[hash] --log-level=warning --minify --outdir=out && rm -rf tmp",
+		"dev": "npm run duomo-dev & retro dev",
 		"build": "npm run duomo-build & retro build",
 		"serve": "retro serve"
 	},
@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@zaydek/retro": "^0.0.35",
-		"esbuild": "^0.11.2",
+		"esbuild": "^0.11.4",
 		"sass": "^1.32.8"
 	}
 }
