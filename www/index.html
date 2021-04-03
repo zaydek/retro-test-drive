@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, world!</title>
+<html lang="en" data-preload>
 
-		<!-- Duomo stub -->
-		<!-- https://css-tricks.com/transitions-only-after-page-load -->
-		<style>
-			:root:not([data-ready]) {
-				-webkit-transition: none !important;
-				-moz-transition: none !important;
-				-ms-transition: none !important;
-				-o-transition: none !important;
-				transition: none !important;
-			}
-		</style>
-		<script>
-			document.addEventListener("DOMContentLoaded", e => {
-				document.documentElement.setAttribute("data-ready", "true")
-			})
-		</script>
-		<script src="/www/duomo-runtime.js"></script>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hello, world!</title>
 
-		<link rel="stylesheet" href="/index.css" />
-		<link rel="stylesheet" href="/duomo.css" />
-	</head>
-	<body>
-		<div id="root"></div>
-		<script src="/react.js"></script>
-		<script src="/index.js"></script>
-	</body>
+	<!-- Duomo stub -->
+	<!-- https://css-tricks.com/transitions-only-after-page-load -->
+	<style>
+		:root[data-preload] {
+			-webkit-transition: none !important;
+			-moz-transition: none !important;
+			-ms-transition: none !important;
+			-o-transition: none !important;
+			transition: none !important;
+		}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", e => {
+			document.documentElement.removeAttribute("data-preload")
+		})
+	</script>
+	<script src="/www/duomo-runtime.esbuild.js"></script>
+
+	<link rel="stylesheet" href="/www/duomo.css" />
+	<link rel="stylesheet" href="/index.css" />
+</head>
+
+<body>
+	<div id="root"></div>
+	<script src="/react.js"></script>
+	<script src="/index.js"></script>
+</body>
+
 </html>

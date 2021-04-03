@@ -1,9 +1,9 @@
 {
 	"scripts": {
-		"duomo-dev": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --log-level=warning --outdir=out && rm -rf tmp",
-		"duomo-build": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --entry-names=[dir]/[name]__[hash] --log-level=warning --minify --outdir=out && rm -rf tmp",
-		"dev": "npm run duomo-dev & retro dev",
-		"build": "npm run duomo-build & retro build",
+		"duomo-dev": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --log-level=warning --outfile=www/duomo.css && rm -rf tmp",
+		"duomo-build": "sass duomo.config.scss tmp/duomo.css --no-source-map && esbuild tmp/duomo.css --log-level=warning --minify --outfile=www/duomo.css && rm -rf tmp",
+		"dev": "npm run duomo-dev && retro dev",
+		"build": "npm run duomo-build && retro build",
 		"serve": "retro serve"
 	},
 	"dependencies": {
